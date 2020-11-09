@@ -1,0 +1,33 @@
+h1
+{
+    color: blue;
+    background-color: yellow;
+    letter-spacing: 10px;
+}
+
+body
+{
+    background: black;
+    color: white;
+}
+
+#span1
+{
+    color: red;
+}
+
+.span2
+{
+    color: yellow;
+}
+
+button
+{
+    background: cyan;
+    color: blue;
+}
+
+input
+{
+    background: orange;
+}
