@@ -1,0 +1,60 @@
+body
+{
+    background: #2e2b2b;
+    color: white;
+}
+
+thead:hover
+{
+    font-weight: 500;
+    color: red;
+}
+
+h1
+{
+    font-family: monospace;
+    letter-spacing: 7px;
+    color: #187F78;
+}
+
+h2
+{
+    font-family: sans-serif;
+    color: #2562C4;
+}
+
+h2:nth-of-type(2n)
+{
+    font-family: fantasy;
+    font-weight: 100;
+    color: #26C550;
+}
+
+span
+{
+    font-style: italic;
+    color: #C5BA26;
+}
+
+#span:hover
+{
+    color: #6D337A;
+}
+
+.span:hover
+{
+    color: #034368;
+}
+
+td:nth-child(3n+1)
+{
+    color: orange;
+}
+
+td:nth-of-type(4n)
+{
+    color: #278502;
+    text-decoration: underline wavy;
+}
+
+
