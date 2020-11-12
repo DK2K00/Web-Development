@@ -1,0 +1,21 @@
+img
+{
+    width: 30%;
+    margin: calc(10%/6);
+}
+
+nav
+{
+    font-family: 'Lato', sans-serif;
+    width: 30%;
+    color: #ccbea3;
+    margin-left: calc(10%/6);
+    border-bottom: 2px solid #262522;
+    font-size: 1.5em;
+    padding: 1.2em;  
+}
+
+body
+{
+    background: #1c1b19;
+}
