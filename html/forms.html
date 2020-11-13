@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="/next">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="uname" placeholder="Enter Username" minlength="5" maxlength="20">
+        
+        <br>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="pwd" placeholder="Enter password" minlength="5" maxlength=20>
+
+        <br>
+
+        <label for="slider">Slider</label>
+        <input type="range" id="slider" name="s">
+
+        <br>
+        <p>Choose</p>
+        <label for="radio">Awesome</label>
+        <input type="radio" id="radio" name="r" value="Awesome">
+        
+        <label for="radio">Extreme</label>
+        <input type="radio" id="radio" name="r" value="Extreme">
+
+        <br>
+        <p>Choose</p>
+        <label for="check">Yes</label>
+        <input type="checkbox" id="check" name="s" value="Yes">
+
+        <label for="check">Yeah</label>
+        <input type="checkbox" id="check" name="s" value="Yeah">
+
+        <br>
+        <label for="select">Choose one</label>
+        <select name="question" id="select">
+            <option value="">Choose something</option>
+            <option value="Who">Who</option>
+            <option value="What">What</option>
+            <option value="Where">Where</option>
+            <option value="When">When</option>
+            <option value="How">How</option>
+        </select>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>
