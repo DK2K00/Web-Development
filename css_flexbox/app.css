@@ -1,0 +1,35 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container {
+    background-color: #48bfe3;
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #5e60ce;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#container div
+{
+    height: 100px;
+    width: 100px;
+    flex-wrap: wrap;
+}
+
+#container div:nth-of-type(3)
+{
+    align-self: flex-end;
+}
+
+#container div:nth-of-type(5)
+{
+    align-self: flex-start;
+}
+
