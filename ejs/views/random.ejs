@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+
+<h1>Greater or Lesser</h1>
+
+<h3>The number generated is: <%= num %></h3>
+<% if(num <= 5){ %>
+    <h2>The number <%= num %> is lesser than or equal to half </h2>
+    <% } else { %>
+    <h2>The number <%= num %> is greater than half </h2>
+<% } %>
+
+<%- include('partials/footer') %>

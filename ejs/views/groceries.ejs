@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+
+    <h1>Grocery Shopping List</h1>
+    <ul>
+        <% for(let item of list){ %>
+        <li><%= item %> </li>
+        <% } %>
+    </ul>
+
+    <%- include('partials/footer') %>
