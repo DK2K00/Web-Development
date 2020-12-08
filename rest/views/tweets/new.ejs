@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tweet</title>
+</head>
+
+<body>
+    <h1>New Tweet</h1>
+    <form action="/tweets" method='post'>
+        <section>
+            <label for="username">Enter Username: </label>
+            <input type="text" id="username" placeholder="Username" name="username">
+        </section>
+
+        <section>
+            <label for="tweet">Tweet Area</label>
+            <br>
+            <textarea name="tweet" id="tweet" cols="30" rows="10"></textarea>
+        </section>
+        <button>Submit</button>
+    </form>
+
+    <a href="/tweets">Go Home</a>
+</body>
+
+</html>
