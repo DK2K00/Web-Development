@@ -69,5 +69,5 @@ app.delete('/campgrounds/:id', async (req, res) => {
 
 
 app.listen(8080, () => {
-    console.log('Serving on port 3000')
+    console.log('Listening')
 })
