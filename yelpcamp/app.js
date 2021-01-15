@@ -20,7 +20,11 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+const MongoDBStore = require("connect-mongo")(session);
+
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
+
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -48,9 +52,22 @@ app.use(mongoSanitize({
     replaceWith: '_'
 }))
 
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+
+const store = new MongoDBStore({
+    url: dbUrl,
+    secret,
+    touchAfter: 24 * 60 * 60
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+})
+
 const sessionConfig = {
+    store,
     name: 'session',
-    secret: 'thisshouldbeabettersecret!',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -84,8 +101,7 @@ const styleSrcUrls = [
 ];
 const connectSrcUrls = [
     "https://api.mapbox.com/",
-    "https://a.tiles.mapbox.com/",
-    "https://b.tiles.mapbox.com/",
+    "https://*.tiles.mapbox.com",
     "https://events.mapbox.com/",
 ];
 const fontSrcUrls = [];
@@ -102,7 +118,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dfre9zcz6/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com/",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
@@ -137,6 +153,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(8080, () => {
-    console.log('Listening')
-})
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+    console.log(`Serving on port ${port}`)
+});
